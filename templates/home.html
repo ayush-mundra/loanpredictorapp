@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+
+
+  <form method="POST" action="{% url 'result'  %}" >
+    {% csrf_token %}
+
+  <label for="Credit_History">Credit_History
+</label><br>
+   <input type="number" id="Credit_History" name="Credit_History" min="0" max="1"><br><br>
+
+  <label for="Male">Male</label><br>
+  <input type="number" id="Male" name="Male" min="0" max="1"><br><br>
+
+  <label for="married_Yes">married_Yes</label><br>
+  <input type="number" id="married_Yes" name="married_Yes" min="0" max="1"><br><br>
+
+  <label for="Dependents">Dependents</label><br>
+  <input type="number" id="Dependents" name="Dependents" min="0" max="20"><br><br>
+  
+  <label for="Not_graduate">Not_graduate
+</label><br>
+  <input type="number" id="Not_graduate" name="Not_graduate" min="0" max="1"><br><br>
+
+  <label for="Self_Employed">Self_Employed
+</label><br>
+  <input type="number" id="Self_Employed" name="Self_Employed" min="0" max="1"><br><br>
+
+  <label for="ApplicantIncome">ApplicantIncome
+</label><br>
+  <input type="number" id="ApplicantIncome" name="ApplicantIncome" ><br><br>
+
+  <label for="CoapplicantIncome">CoapplicantIncome
+</label><br>
+  <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" ><br><br>
+
+  <label for="LoanAmount">LoanAmount
+</label><br>
+  <input type="number" id="LoanAmount" name="LoanAmount"><br><br>
+
+  <label for="Urban">Urban
+</label><br>
+  <input type="number" id="Urban" name="Urban" min="0" max="1"><br><br>
+
+   <label for="SemiUrban">SemiUrban
+</label><br>
+  <input type="number" id="SemiUrban" name="SemiUrban" min="0" max="1"><br><br>
+
+  <label for="Rural">Rural
+</label><br>
+ <input type="number" id="Rural" name="Rural" min="0" max="1"><br><br>
+
+  <label for="Loan_Amount_Term">Loan_Amount_Term
+</label><br>
+  <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term"><br><br>
+
+    <input type="submit" value="Submit">
+  
+</form> 
+
+</body>
+</html>
