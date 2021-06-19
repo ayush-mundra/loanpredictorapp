@@ -6,8 +6,13 @@
 </head>
 <body>
 
+{% if ans == 0 %}
+    <h1> Sorry, you are not eligible for the lone! </h1>
+{% endif %}
 
-hello 
-{{ans}}
+{% if ans == 1 %}
+    <h1> Congrats, you are eligible for the lone !</h1>
+{% endif %}
+
 </body>
 </html>

@@ -1,66 +1,124 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-
-
-  <form method="POST" action="{% url 'result'  %}" >
+  <script>
+  function empty() {
+    var x;
+    const features = ["Credit_History", "Male", "married_Yes", "Self_Employed", "Dependents", "Not_graduate", "Self_Employed", "ApplicantIncome", "CoapplicantIncome","Urban", "SemiUrban", "Rural", "Loan_Amount_Term" ]
+    var i;
+    for (i = 0; i < features.length ; i++) {
+        var x = document.forms["myForm"][features[i]].value;
+        // x = document.getElementById(features[i]).value;
+        if (x == "") {
+            alert("fill all values");
+            return false;
+        };  
+  }
+   
+}
+</script>
+  <h1> Welcome to the lone prediction website! </h1>
+  <form name="myForm" action="{% url 'result'  %}" onsubmit="return empty()" method="post" required>
+  <!-- <form method="POST" action="{% url 'result'  %}" > -->
     {% csrf_token %}
 
-  <label for="Credit_History">Credit_History
-</label><br>
-   <input type="number" id="Credit_History" name="Credit_History" min="0" max="1"><br><br>
+  <label for="Credit_History">Credit_History (Press 1 for yes and 0 for No)
+  </label><br>
+  <input type="radio" id="1" name="Credit_History" value=1>
+  <label for="1">1</label>
+  <br>
+  <input type="radio" id="0" name="Credit_History" value=0>
+  <label for="0">0</label><br><br>
 
-  <label for="Male">Male</label><br>
-  <input type="number" id="Male" name="Male" min="0" max="1"><br><br>
-
-  <label for="married_Yes">married_Yes</label><br>
-  <input type="number" id="married_Yes" name="married_Yes" min="0" max="1"><br><br>
-
-  <label for="Dependents">Dependents</label><br>
-  <input type="number" id="Dependents" name="Dependents" min="0" max="20"><br><br>
+  <label for="Male">Gender (Press 1 for Male and 0 for Female)</label><br>
+  <input type="radio" id="1" name="Male" value=1>
+    <label for="1">1</label>
+    <br>
+    <input type="radio" id="0" name="Male" value=0>
+    <label for="0">0</label><br><br>
   
-  <label for="Not_graduate">Not_graduate
+  <label for="married_Yes">Are you married ? (Press 1 for yes and 0 for No)
+  </label><br>
+  <input type="radio" id="1" name="married_Yes" value=1>
+    <label for="1">1</label>
+    <br>
+    <input type="radio" id="0" name="married_Yes" value=0>
+    <label for="0">0</label><br><br>
+  
+    
+  <label for="Dependents">How many dependents you have ? (Max limit 100) </label><br>
+  <input type="number" id="Dependents" name="Dependents" min="0" max="100"><br><br>
+  
+  <label for="Not_graduate">Are you not graduate ? (Press 1 for yes and 0 for No)
 </label><br>
-  <input type="number" id="Not_graduate" name="Not_graduate" min="0" max="1"><br><br>
+  <input type="radio" id="1" name="Not_graduate" value=1>
+  <label for="1">1</label>
+  <br>
+  <input type="radio" id="0" name="Not_graduate" value=0>
+  <label for="0">0</label><br><br>
 
-  <label for="Self_Employed">Self_Employed
+
+
+  <label for="Self_Employed">Are you self employed ? (Press 1 for yes and 0 for No)
 </label><br>
-  <input type="number" id="Self_Employed" name="Self_Employed" min="0" max="1"><br><br>
+<input type="radio" id="1" name= "Self_Employed" value=1>
+<label for="1">1</label>
+<br>
+<input type="radio" id="0" name="Self_Employed" value=0>
+<label for="0">0</label><br><br>
 
-  <label for="ApplicantIncome">ApplicantIncome
+  <label for="ApplicantIncome">Write your Income
 </label><br>
   <input type="number" id="ApplicantIncome" name="ApplicantIncome" ><br><br>
 
-  <label for="CoapplicantIncome">CoapplicantIncome
+  <label for="CoapplicantIncome">Write your Coapplicant Income
 </label><br>
   <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" ><br><br>
 
-  <label for="LoanAmount">LoanAmount
+  <label for="LoanAmount">Enter the LoanAmount
 </label><br>
   <input type="number" id="LoanAmount" name="LoanAmount"><br><br>
 
-  <label for="Urban">Urban
+  
+  <label for="Urban">Do you live in urban area ? (Press 1 for yes and 0 for No)
 </label><br>
-  <input type="number" id="Urban" name="Urban" min="0" max="1"><br><br>
+<input type="radio" id="1" name= "Urban" value=1>
+<label for="1">1</label>
+<br>
+<input type="radio" id="0" name="Urban" value=0>
+<label for="0">0</label><br><br>
 
-   <label for="SemiUrban">SemiUrban
+   <label for="SemiUrban">Do you live in SemiUrban area ? (Press 1 for yes and 0 for No)
 </label><br>
-  <input type="number" id="SemiUrban" name="SemiUrban" min="0" max="1"><br><br>
+<input type="radio" id="1" name= "SemiUrban" value=1>
+<label for="1">1</label>
+<br>
+<input type="radio" id="0" name="SemiUrban" value=0>
+<label for="0">0</label><br><br>
 
-  <label for="Rural">Rural
+  <label for="Rural">Do you live in Rural area ? (Press 1 for yes and 0 for No)
 </label><br>
- <input type="number" id="Rural" name="Rural" min="0" max="1"><br><br>
+<input type="radio" id="1" name= "Rural" value=1>
+<label for="1">1</label>
+<br>
+<input type="radio" id="0" name="Rural"value=0>
+<label for="0">0</label><br><br>
 
-  <label for="Loan_Amount_Term">Loan_Amount_Term
+  <label for="Loan_Amount_Term">Enter the Loan Amount Term in years
 </label><br>
   <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term"><br><br>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" onClick="return empty()">
   
 </form> 
 
