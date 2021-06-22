@@ -6,9 +6,14 @@ django-heroku==0.3.1
 gunicorn==20.1.0
 idna==2.10
 joblib==1.0.1
+numpy==1.21.0
 psycopg2==2.9.1
 pytz==2021.1
 requests==2.25.1
+scikit-learn==0.24.2
+scipy==1.7.0
+sklearn==0.0
 sqlparse==0.4.1
+threadpoolctl==2.1.0
 urllib3==1.26.5
 whitenoise==5.2.0

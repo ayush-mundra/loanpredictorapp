@@ -8,6 +8,7 @@ def home(request):
 	return render(request, "home.html")
 
 def result(request):
+ 
 	cls = joblib.load("finalized_model.sav")
 	lis = []
 	lis.append(request.POST.get("ApplicantIncome"))
